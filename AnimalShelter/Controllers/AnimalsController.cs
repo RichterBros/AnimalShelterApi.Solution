@@ -3,6 +3,8 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using AnimalShelter.Models;
 using Microsoft.EntityFrameworkCore;
+
+
 namespace AnimalShelter.Controllers
 {
   [Route("api/[controller]")]
@@ -16,19 +18,49 @@ namespace AnimalShelter.Controllers
       _db = db;
     }
 
+    // // GET api/animals
+    // [HttpGet]
+    // public ActionResult<IEnumerable<Animal>> Get()
+    // {
+    //   return _db.Animals.ToList();
+    // }
+
+    // // GET api/animals/5
+    // [HttpGet("{id}")]
+    // public ActionResult<Animal> Get(int id)
+    // {
+    //     return _db.Animals.FirstOrDefault(entry => entry.AnimalId == id);
+    // }
+
     // GET api/animals
     [HttpGet]
-    public ActionResult<IEnumerable<Animal>> Get()
+   // GET api/animals
+[HttpGet]
+public ActionResult<IEnumerable<Animal>> Get(string species, string gender, string name, int age )
+{
+    var query = _db.Animals.AsQueryable();
+
+    if (species != null)
     {
-      return _db.Animals.ToList();
+    query = query.Where(entry => entry.Species == species);
     }
 
-    // GET api/animals/5
-    [HttpGet("{id}")]
-    public ActionResult<Animal> Get(int id)
+    if (gender != null)
     {
-        return _db.Animals.FirstOrDefault(entry => entry.AnimalId == id);
+    query = query.Where(entry => entry.Gender == gender);
     }
+
+    if (name != null)
+    {
+    query = query.Where(entry => entry.Name == name);
+    }
+
+     if (age != 0)
+    {
+    query = query.Where(entry => entry.Age == age);
+    }
+    return query.ToList();
+}   
     
     // POST api/animals
     [HttpPost]
