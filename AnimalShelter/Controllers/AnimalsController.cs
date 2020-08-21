@@ -20,26 +20,26 @@ namespace AnimalShelter.Controllers
       _db = db;
     }
 
-    // // GET api/animals
+    // GET api/animals
     // [HttpGet]
     // public ActionResult<IEnumerable<Animal>> Get()
     // {
     //   return _db.Animals.ToList();
     // }
 
-    // // GET api/animals/5
-    // [HttpGet("{id}")]
-    // public ActionResult<Animal> Get(int id)
-    // {
-    //     return _db.Animals.FirstOrDefault(entry => entry.AnimalId == id);
-    // }
+    // GET api/animals/5
+    [HttpGet("{id}")]
+    public ActionResult<Animal> Get(int id)
+    {
+        return _db.Animals.FirstOrDefault(entry => entry.AnimalId == id);
+    }
     
-         //Pagination
+         
 
     
-    // GET api/animals
-    // [HttpGet]
-   // GET api/animals
+    //GET api/animals
+    [HttpGet]
+   //GET api/animals
     [HttpGet]
     public ActionResult<IEnumerable<Animal>> Get(string species, string gender, string name, int age )
     {
@@ -67,12 +67,13 @@ namespace AnimalShelter.Controllers
         return query.ToList();
     }   
     
+    //Pagination
     [HttpGet("page")]
     public ActionResult GetPage([FromQuery] UrlQuery urlQuery)
     {
         var validUrlQuery = new UrlQuery(urlQuery.PageNumber, urlQuery.PageSize);
         var pagedData = _db.Animals
-            .OrderBy(creature => creature.AnimalId)
+            .OrderBy(animal => animal.AnimalId)
             .Skip((validUrlQuery.PageNumber - 1) * validUrlQuery.PageSize)
             .Take(validUrlQuery.PageSize);
         return Ok(pagedData);
