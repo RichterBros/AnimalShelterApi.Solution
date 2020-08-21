@@ -17,25 +17,17 @@
 <h4 align = "center">
   <a href="#requirements">Requirements</a> •
   <a href="#setup">Setup</a> •
-  <a href="#protecting-your-data">Protecting Data</a> 
-  <a href="#questions-and-concerns">Q's & C's</a> •
   <a href="#technologies-used">Technologies</a> •
   <a href="#known-bugs">Known Bugs</a> •  
-  <a href="#contributors">Contributors</a> •
   <a href="#license">License</a></h4>
 
 <br>
 
 ## **ABOUT**
 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
+* This program will create an API for a local animal shelter. 
+* The API will list the available cats and dogs at the shelter.
+
 
 
 Test Install Notes
