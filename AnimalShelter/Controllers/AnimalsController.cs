@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using AnimalShelter.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 
 namespace AnimalShelter.Controllers
@@ -31,37 +33,53 @@ namespace AnimalShelter.Controllers
     // {
     //     return _db.Animals.FirstOrDefault(entry => entry.AnimalId == id);
     // }
-
-    // GET api/animals
-    [HttpGet]
-   // GET api/animals
-[HttpGet]
-public ActionResult<IEnumerable<Animal>> Get(string species, string gender, string name, int age )
-{
-    var query = _db.Animals.AsQueryable();
-
-    if (species != null)
-    {
-    query = query.Where(entry => entry.Species == species);
-    }
-
-    if (gender != null)
-    {
-    query = query.Where(entry => entry.Gender == gender);
-    }
-
-    if (name != null)
-    {
-    query = query.Where(entry => entry.Name == name);
-    }
-
-     if (age != 0)
-    {
-    query = query.Where(entry => entry.Age == age);
-    }
-    return query.ToList();
-}   
     
+         //Pagination
+
+    
+    // GET api/animals
+    // [HttpGet]
+   // GET api/animals
+    [HttpGet]
+    public ActionResult<IEnumerable<Animal>> Get(string species, string gender, string name, int age )
+    {
+        var query = _db.Animals.AsQueryable();
+
+        if (species != null)
+        {
+        query = query.Where(entry => entry.Species == species);
+        }
+
+        if (gender != null)
+        {
+        query = query.Where(entry => entry.Gender == gender);
+        }
+
+        if (name != null)
+        {
+        query = query.Where(entry => entry.Name == name);
+        }
+
+        if (age != 0)
+        {
+        query = query.Where(entry => entry.Age == age);
+        }
+        return query.ToList();
+    }   
+    
+    [HttpGet("page")]
+    public ActionResult GetPage([FromQuery] UrlQuery urlQuery)
+    {
+        var validUrlQuery = new UrlQuery(urlQuery.PageNumber, urlQuery.PageSize);
+        var pagedData = _db.Animals
+            .OrderBy(creature => creature.AnimalId)
+            .Skip((validUrlQuery.PageNumber - 1) * validUrlQuery.PageSize)
+            .Take(validUrlQuery.PageSize);
+        return Ok(pagedData);
+    }
+
+
+
     // POST api/animals
     [HttpPost]
     public void Post([FromBody] Animal animal)
