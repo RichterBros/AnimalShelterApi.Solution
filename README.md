@@ -30,8 +30,7 @@
 
 
 
-Test Install Notes
-Clone repo repo url 
+## **INSTALL NOTES** 
 
 navigate to desired directory for where your project will go
 git clone url
@@ -47,16 +46,16 @@ dotnet watch run
 open postman
 click the + symbol in the middle of the page
 
-~TO GET AN ITEM~
+TO GET AN ITEM
 Set your request to type "GET" 
 http://localhost:5000/api/animals/ (for index of all)
 or
-http://localhost:5000/api/animals/id (for specific creature details)
+http://localhost:5000/api/animals/id (for specific animal details)
 Hit Send
+or
+http://localhost:5000/api/animals/Page?pageNumber=2&PageSize=5 (to limit number of displayed animals)
 
-
-
-~TO ADD AN ITEM~
+TO ADD AN ITEM
 Set your request to type "POST"
 http://localhost:5000/api/animals/ 
 Select Body Tab
@@ -71,7 +70,7 @@ Write your addition to the database in the following format
  
 }
 
-~TO EDIT AN ITEM~
+TO EDIT AN ITEM
 Make a GET request for the id you wish to edit
 http://localhost:5000/api/animals/id
 You can select the returned item data and paste that into your request body section for editing. 
@@ -80,18 +79,11 @@ Set your request to Put
 Hit Send
 
 
-~To DELETE AN ITEM~
+To DELETE AN ITEM
 Set your route in Postman to the id you wish to delete
 Set your request to Delete
 Hit Send
 
-* note: write note to user to refer to mysql settings for these values
-
-
-
-THIS HERE
-
-http://localhost:5000/api/animals/Page?pageNumber=2&PageSize=5
 
 ## **REQUIREMENTS** 
 
