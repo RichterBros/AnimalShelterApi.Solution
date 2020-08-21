@@ -67,6 +67,13 @@ namespace AnimalShelter.Controllers
         return query.ToList();
     }   
     
+    
+    
+    
+    
+    
+    
+    
     //Pagination
     [HttpGet("page")]
     public ActionResult GetPage([FromQuery] UrlQuery urlQuery)
