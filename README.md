@@ -42,47 +42,44 @@
 * cd into AnimalShelter
 * dotnet ef database update
 * dotnet watch run
+* Open postman<br>
+* click the + symbol in the middle of the page<br>
 
-open postman
-click the + symbol in the middle of the page
+TO GET AN ITEM<br>
+* Set your request to type "GET" <br>
+* http://localhost:5000/api/animals/ (for index of all)<br>
+* or<br>
+* http://localhost:5000/api/animals/id (for specific animal details)<br>
+* Hit Send<br>
+* or<br>
+* http://localhost:5000/api/animals/Page?pageNumber=2&PageSize=5 (to limit number of displayed animals)<br>
 
-TO GET AN ITEM
-Set your request to type "GET" 
-http://localhost:5000/api/animals/ (for index of all)
-or
-http://localhost:5000/api/animals/id (for specific animal details)
-Hit Send
-or
-http://localhost:5000/api/animals/Page?pageNumber=2&PageSize=5 (to limit number of displayed animals)
+TO ADD AN ITEM<br>
+* Set your request to type "POST"<br>
+* http://localhost:5000/api/animals/ <br>
+* Select Body Tab<br>
+* Select Raw Radio Button<br>
+* Select JSON from dropdown<br>
+* Write your addition to the database in the following format<br>
+{<br>
+  "Name" = "your value",<br>
+  "Species" = "your value",<br>
+  "Age" = "your value",<br>
+  "Gender" = "your value",<br>
+}<br>
 
-TO ADD AN ITEM
-Set your request to type "POST"
-http://localhost:5000/api/animals/ 
-Select Body Tab
-Select Raw Radio Button
-Select JSON from dropdown
-Write your addition to the database in the following format
-{
-  "Name" = "your value",
-  "Species" = "your value",
-  "Age" = "your value",
-  "Gender" = "your value",
- 
-}
+TO EDIT AN ITEM<br>
+* Make a GET request for the id you wish to edit<br>
+* http://localhost:5000/api/animals/id<br>
+* You can select the returned item data and paste that into your request body section for editing.<br> 
+* Once you have completed your edits.<br> 
+* Set your request to Put<br>
+* Hit Send<br>
 
-TO EDIT AN ITEM
-Make a GET request for the id you wish to edit
-http://localhost:5000/api/animals/id
-You can select the returned item data and paste that into your request body section for editing. 
-Once you have completed your edits. 
-Set your request to Put
-Hit Send
-
-
-To DELETE AN ITEM
-Set your route in Postman to the id you wish to delete
-Set your request to Delete
-Hit Send
+To DELETE AN ITEM<br>
+* Set your route in Postman to the id you wish to delete<br>
+* Set your request to Delete<br>
+* Hit Send<br>
 
 
 ## **REQUIREMENTS** 
