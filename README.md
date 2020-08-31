@@ -72,7 +72,7 @@ TO EDIT AN ITEM<br>
 * Make a GET request for the id you wish to edit<br>
 * http://localhost:5000/api/animals/id<br>
 * You can select the returned item data and paste that into your request body section for editing.<br> 
-* Once you have completed your edits.Set your request to Put<br>
+* Once you have completed your edits, set your request to Put<br>
 * Hit Send<br>
 
 To DELETE AN ITEM<br>
