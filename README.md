@@ -60,7 +60,7 @@ TO ADD AN ITEM<br>
 * Select Body Tab<br>
 * Select Raw Radio Button<br>
 * Select JSON from dropdown<br>
-* Write your addition to the database in the following format<br>
+* Write your addition to the database in the following format:<br>
 {<br>
   "Name" = "your value",<br>
   "Species" = "your value",<br>
