@@ -90,52 +90,13 @@ To DELETE AN ITEM<br>
 * Install [MySql Workbench](https://www.mysql.com/products/workbench/)
 
 
-
-
-
-#### Step: **You need to update your username and password in the appsettings.json file.**
+**You need to update your username and password in the appsettings.json file.**
 
 _by default these are set to user:root and an empty password. if you are unsure, refer to the settings for your MySqlWorkbench._
 
 ![appsettings](https://coding-assets.s3-us-west-2.amazonaws.com/img/app-settings.png)
 
-## **SETUP**
 
-copy this url to clone this project to your local system:
-```html
-https://github.com/RichterBros/AnimalShelterApi.Solution.git
-```
-
-<br>
-
-Once copied, select "Clone Repository" from within VSCode & paste the copied link as shown in the image below.
-
-![cloning](https://coding-assets.s3-us-west-2.amazonaws.com/img/clone-github2.gif "Cloning from Github within VSCode")
-
-<br>
-
-With the project open to the root directory, navigate to the production directory with the following commands in your terminal.
-```js 
-cd AnimalShelter
-```
-
-```js 
-dotnet restore 
-```
-
-```js 
-dotnet build 
-``` 
-
-```js 
-dotnet ef database update 
-``` 
-
-Your application is now built, as well as the requisite database for this application. Now we run the program with...
-```js 
-dotnet watch run 
-``` 
-<br>
 
 ## **TECHNOLOGIES USED**
 
