@@ -32,16 +32,16 @@
 
 ## **INSTALL NOTES** 
 
-navigate to desired directory for where your project will go
-git clone url
-add workspace
-cd AnimalShelter
-dotnet restore
-dotnet build
-create a new terminal
-cd into AnimalShelter
-dotnet ef database update
-dotnet watch run
+* navigate to desired directory for where your project will go
+* git clone url
+* add workspace
+* cd AnimalShelter
+* dotnet restore
+* dotnet build
+* create a new terminal
+* cd into AnimalShelter
+* dotnet ef database update
+* dotnet watch run
 
 open postman
 click the + symbol in the middle of the page
@@ -138,12 +138,6 @@ Your application is now built, as well as the requisite database for this applic
 ```js 
 dotnet watch run 
 ``` 
-<br>
-
-## **Note on Pagination**
-The Animal Shelter API returns a defaulit of 5 results per page at a time with a maximum of 5.
-
-To modify this, use the query parameters "limit" and "start" to alter the response results displayed.  The "limit" parameter will specify how many results will be displayed, and the "start" parameter will specify which element in the response the liimit should start counting.
 <br>
 
 ## **TECHNOLOGIES USED**
