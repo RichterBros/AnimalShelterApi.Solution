@@ -48,10 +48,10 @@
 TO GET AN ITEM<br>
 * Set your request to type "GET" <br>
 * http://localhost:5000/api/animals/ (for index of all)<br>
-* or<br>
+or<br>
 * http://localhost:5000/api/animals/id (for specific animal details)<br>
 * Hit Send<br>
-* or<br>
+or<br>
 * http://localhost:5000/api/animals/Page?pageNumber=2&PageSize=5 (to limit number of displayed animals)<br>
 
 TO ADD AN ITEM<br>
